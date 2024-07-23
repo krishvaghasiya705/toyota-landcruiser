@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.car-slider-main {
+    overflow: hidden;
+    background-color: var(--colorwhite);
+    padding: 50px 0;
+
+    .gallary-button-main {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 30px 0;
+
+        .timeless {
+            transition: .5s ease-in-out;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+                background-color: var(--colorwhite);
+                border-top: 5px solid var(--colorblack);
+                border-right: 5px solid var(--colorblack);
+                border-left: none;
+                border-bottom: none;
+                padding: 15px;
+                transition: .5s ease-in-out;
+
+                p {
+                    font-family: var(--font-family2);
+                    color: var(--colorblack);
+                    font-size: 30px;
+                    font-weight: 700;
+                    line-height: 21px;
+                    letter-spacing: 0.1em;
+                    text-align: left;
+                    transition: .5s ease-in-out;
+                }
+
+                &:hover {
+                    transition: .5s ease-in-out;
+                    box-shadow: rgba(0, 0, 0, 0.4) -5px -5px, rgba(0, 0, 0, 0.3) -10px -10px, rgba(5, 5, 5, 0.2) -15px -15px, rgba(0, 0, 0, 0.1) -20px -20px, rgba(0, 0, 0, 0.05) -25px -25px;
+                    // box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(5, 5, 5, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;
+                }
+            }
+
+            &:hover {
+                transition: .5s ease-in-out;
+                box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(5, 5, 5, 0.2) 15px 15px, rgba(0, 0, 0, 0.1) 20px 20px, rgba(0, 0, 0, 0.05) 25px 25px;
+            }
+        }
+    }
+
+    .slider-container {
+        cursor: grab;
+
+        .slick-slide {
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+
+                .car-box {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        .slick-prev {
+            width: auto;
+            height: auto;
+            left: 20px;
+            z-index: 9;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+            }
+
+            img {
+                width: auto;
+                height: auto;
+            }
+        }
+
+        .slick-next {
+            width: auto;
+            height: auto;
+            right: 20px;
+            z-index: 9;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+            }
+
+            img {
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}

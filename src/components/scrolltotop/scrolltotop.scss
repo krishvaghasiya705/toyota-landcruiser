@@ -1,0 +1,64 @@
+@import "../../styles/index.scss";
+
+.react-tooltip {
+    z-index: 9;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    border: none;
+    border-radius: 50%;
+
+    &.visible {
+        transform: translateX(0%);
+    }
+
+    &.hidden {
+        transform: translateX(300px);
+    }
+
+    .scroll-to-top-button {
+        border-radius: 50%;
+        border: none;
+        opacity: 1;
+        background: transparent;
+
+        .Tireimage {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e0e0e0;
+            border: none;
+            transition: .5s ease-in-out;
+
+            &:hover {
+                transition: .5s ease-in-out;
+                box-shadow: 16px 16px 100px #5a5a5a, -16px -16px 100px #ffffff;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+                border: none;
+                animation: Tirerotate 5s infinite linear;
+
+                @keyframes Tirerotate {
+                    0% {
+                        rotate: 0deg;
+                    }
+
+                    100% {
+                        rotate: 360deg;
+                    }
+                }
+            }
+        }
+    }
+}

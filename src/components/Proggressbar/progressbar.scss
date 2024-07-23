@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: 100%;
+    width: 3px;
+    transform: rotate(180deg);
+    background-color: transparent;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ef404a;
+    transition: height 0.3s ease;
+}

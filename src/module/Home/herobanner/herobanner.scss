@@ -1,0 +1,148 @@
+@import "../../../styles/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.herobanner {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .herobanner-image-main {
+        width: 100%;
+        position: relative;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .herobanner-image-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: #00000047;
+        }
+    }
+
+    .herobanner-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .container {
+            height: 100%;
+        }
+
+        .herobanner-contant-main {
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            height: 100%;
+            padding: 0 0 183px 0;
+            box-sizing: border-box;
+
+            @include breakpoint ("lg-max") {
+                padding: 0 0 50px 0;
+            }
+
+            .the-div-main {
+                display: flex;
+                justify-content: end;
+                align-items: end;
+                width: 100%;
+
+                .herobannerline {
+                    margin: 0 0 18px 0;
+                    text-align: left;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+
+                    img {
+                        pointer-events: none;
+                        height: 10px;
+                        width: 100%;
+                        animation: line 5s infinite alternate ease-in-out;
+
+                        @keyframes line {
+                            0% {
+                                width: 0%;
+                            }
+
+                            100% {
+                                width: 100%;
+                            }
+
+                        }
+                    }
+                }
+
+                .Typewriter {
+
+                    span {
+                        color: var(--colorwhite);
+                        font-family: var(--font-family2);
+                        font-size: 72px;
+                        font-weight: 700;
+                        line-height: 106px;
+                        text-align: left;
+
+                    }
+                }
+            }
+
+            .conqueror-div {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                margin: 0 0 20px 0;
+
+                span {
+                    font-family: var(--font-family2);
+                    font-size: 96px;
+                    font-weight: 700;
+                    line-height: 142px;
+                    text-align: left;
+                    color: var(--color1);
+                }
+            }
+
+            .oftheworld-div {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                margin: 0;
+
+                span {
+                    font-family: var(--font-family2);
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 71px;
+                    color: var(--colorwhite);
+                }
+            }
+        }
+    }
+}

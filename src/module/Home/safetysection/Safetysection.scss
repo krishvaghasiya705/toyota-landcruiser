@@ -1,0 +1,157 @@
+@import "../../../styles/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Safetysection {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .safty-image-div-main {
+        width: 100%;
+        height: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .saty-absolute-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 70px 0;
+        box-sizing: border-box;
+
+        .safety-main-contant-flx-main {
+            display: flex;
+            justify-content: start;
+            align-items: end;
+            text-align: left;
+            height: 100%;
+
+            .exterior-title-main {
+                display: flex;
+                justify-content: end;
+                align-items: end;
+                gap: 29px;
+                margin: 0 0 20px 0;
+
+                .Exteriorline {
+                    margin: 0 0 12px 0;
+                    text-align: left;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
+                    img {
+                        pointer-events: none;
+                        height: 10px;
+                        width: 100%;
+                        animation: line 5s infinite alternate ease-in-out;
+
+                        @keyframes line {
+                            0% {
+                                width: 0%;
+                            }
+
+                            100% {
+                                width: 100%;
+                            }
+
+                        }
+                    }
+                }
+
+                p {
+                    color: var(--colorwhite);
+                    font-family: var(--font-family2);
+                    font-size: 36px;
+                    font-weight: 700;
+                    line-height: 53px;
+                    text-align: left;
+
+                    .Typewriter {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        flex-direction: row-reverse;
+
+                        span {
+                            font-family: var(--font-family2);
+                        }
+                    }
+                }
+            }
+
+            h1 {
+                font-family: var(--font-family2);
+                color: var(--color1);
+                font-size: 72px;
+                font-weight: 500;
+                line-height: 53px;
+
+                .Typewriter {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-direction: row-reverse;
+
+                    span {
+                        font-family: var(--font-family2);
+                    }
+                }
+            }
+
+            a {
+                margin: 66px 0 0 0;
+                text-decoration-line: none;
+                font-family: var(--font-family2);
+                color: var(--colorwhite);
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 22.25px;
+                text-align: left;
+                position: relative;
+                display: block;
+
+                &::after {
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 58px;
+                    height: 4px;
+                    background-color: var(--color1);
+                    content: "";
+                }
+            }
+        }
+    }
+}
+
+.container {
+    height: 100%;
+}

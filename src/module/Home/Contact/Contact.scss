@@ -1,0 +1,213 @@
+@import "../../../styles/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .contact-background-main {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        img {
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+
+        .Blank {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00000047;
+        }
+    }
+
+    .contact-content-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .contact-main {
+            box-sizing: border-box;
+            padding: 92px 0 80px 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+            gap: 50px;
+
+            .grid-items-one {
+                text-align: left;
+
+                h1 {
+                    font-family: var(--font-family2);
+                    color: var(--color1);
+                    font-size: 72px;
+                    font-weight: 500;
+                    line-height: 70px;
+                    text-align: left;
+                    margin: 0 0 20px 0;
+                }
+
+                .contact-one {
+                    font-family: var(--font-family2);
+                    color: var(--colorwhite);
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    text-align: left;
+                }
+
+                .contact-two {
+                    font-family: var(--font-family2);
+                    color: var(--colorwhite);
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    text-align: left;
+                    margin: 10px 0 20px 0;
+                }
+
+                .locate-pera {
+
+                    p {
+                        color: var(--colorwhite);
+                        font-family: var(--font-family2);
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: 25px;
+                        text-align: left;
+                        max-width: 132px;
+                        margin: 0 0 30px 0;
+                    }
+
+                    .social-media-icons {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 10px;
+                        margin: 0 0 0 3px;
+
+                        img {
+                            width: fit-content;
+                            height: fit-content;
+                        }
+                    }
+                }
+            }
+
+            .grid-items-two {
+                text-align: left;
+
+                h2 {
+                    color: var(--colorwhite);
+                    font-family: var(--font-family2);
+                    font-size: 36px;
+                    font-weight: 500;
+                    line-height: 53px;
+                    text-align: left;
+                    margin: 0 0 30px 0;
+                }
+
+                form {
+                    width: 100%;
+
+                    input {
+                        box-sizing: border-box;
+                        width: 100%;
+                        border: 1px solid var(--colorwhite);
+                        background-color: transparent;
+                        font-family: var(--font-family2);
+                        color: var(--colorwhite);
+                        text-align: left;
+                        padding: 5px 20px;
+                        font-size: 26px;
+                        font-weight: 500;
+                        margin: 0 0 20px 0;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: var(--color3);
+                            font-size: 26px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    textarea {
+                        box-sizing: border-box;
+                        width: 100%;
+                        border: 1px solid var(--colorwhite);
+                        background-color: transparent;
+                        font-family: var(--font-family2);
+                        color: var(--colorwhite);
+                        text-align: left;
+                        padding: 5px 20px;
+                        font-size: 26px;
+                        font-weight: 500;
+                        resize: none;
+                        height: 124px;
+                        margin: 0 0 20px 0;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: var(--color3);
+                            font-size: 26px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    button {
+                        cursor: pointer;
+                        padding: 16px 34px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--color1);
+                        border: 1px solid var(--color1);
+                        color: var(--colorblack);
+                        font-family: var(--font-family2);
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 11px;
+                        text-align: left;
+
+                        &:hover {
+                            background-color: transparent;
+                            color: var(--colorwhite);
+                            border: 1px solid var(--color1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

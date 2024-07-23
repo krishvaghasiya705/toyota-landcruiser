@@ -1,0 +1,68 @@
+@import "../../styles/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sidenav {
+    position: fixed;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    height: fit-content;
+    width: fit-content;
+    z-index: 999;
+    padding: 10px;
+    background-color: var(--colorwhite);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+
+    a {
+        text-decoration: none;
+
+        .active {
+            background-color: var(--colorblack) !important;
+            transition: .5s ease-in-out;
+        }
+
+        .divnavigation {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .5s ease-in-out;
+            background-color: #EB0A1E;
+
+            p {
+                color: var(--colorwhite);
+                cursor: pointer;
+                font-family: var(--font-family2);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 11px;
+            }
+        }
+    }
+}

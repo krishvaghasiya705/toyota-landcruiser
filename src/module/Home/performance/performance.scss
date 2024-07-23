@@ -1,0 +1,139 @@
+@import "../../../styles/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.Performance-div-main {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .Performance-background-main {
+        width: 100%;
+        height: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .Performance-ab-main {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 90px 0;
+
+        .Performance-flx-main {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+
+            .Perfromance-title-main {
+                display: flex;
+                justify-content: start;
+                align-items: end;
+                gap: 20px;
+
+                h1 {
+                    color: var(--colorwhite);
+                    font-size: 30px;
+                    font-weight: 500;
+                    line-height: 44px;
+                    text-align: left;
+
+                    .Typewriter {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        flex-direction: row-reverse;
+
+                        span {
+                            font-family: var(--font-family2);
+                        }
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 72px;
+                font-weight: 500;
+                line-height: 106px;
+                text-align: left;
+                color: var(--color1);
+
+                .Typewriter {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-direction: row-reverse;
+
+                    span {
+                        font-family: var(--font-family2);
+                    }
+                }
+            }
+        }
+
+        .Performance-car-all-view {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 31px;
+            margin: 62px 0 0 0;
+
+            @include breakpoint ("lg-max") {
+                margin: 30px 0 0 0;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpoint ("sm-ma") {
+                margin: 20px 0 0 0;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .car-view {
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .Blank {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+    }
+}
+
+.container {
+    height: 100%;
+}

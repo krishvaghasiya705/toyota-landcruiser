@@ -1,0 +1,215 @@
+@import "../../../styles/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.Pridesection {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .Pridesectionimagemain {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+
+    .Pridesectionmain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .Prdesection-grid-main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 135px;
+            align-items: start;
+            padding: 92px 0 0 0;
+
+            .grid-item-one {
+                max-width: 450px;
+                text-align: left;
+
+                .the-typewriter {
+                    display: flex;
+                    justify-content: start;
+                    align-items: end;
+                    gap: 20px;
+
+                    .Typewriter {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        flex-direction: row-reverse;
+
+                        span {
+                            font-family: var(--font-family2);
+                            color: var(--colorwhite);
+                            font-size: 36px;
+                            font-weight: 700;
+                            line-height: 30px;
+                            text-align: left;
+                        }
+                    }
+
+                    .Pridesectionline {
+                        margin: 0;
+                        text-align: left;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+
+                        img {
+                            pointer-events: none;
+                            height: 10px;
+                            width: 100%;
+                            animation: line 5s infinite alternate ease-in-out;
+
+                            @keyframes line {
+                                0% {
+                                    width: 0%;
+                                }
+
+                                100% {
+                                    width: 100%;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .landcruiser-titlemaiin {
+                    text-align: left;
+                    margin: 20px 0 0 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 35px;
+
+                    .land-cruiser-title {
+                        display: block;
+
+                        .Typewriter {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            flex-direction: row-reverse;
+                            min-width: 453px;
+
+                            span {
+                                font-family: var(--font-family2);
+                                color: var(--color1);
+                                font-size: 72px;
+                                font-weight: 700;
+                                line-height: 52px;
+                                text-align: left;
+                            }
+                        }
+                    }
+
+                    .pridetitle-main {
+                        display: block;
+
+                        .Typewriter {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            flex-direction: row-reverse;
+                            min-width: 377px;
+
+                            span {
+                                font-family: var(--font-family2);
+                                color: var(--colorwhite);
+                                font-size: 36px;
+                                font-weight: 700;
+                                line-height: 30px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+
+                .pridesection-pera-one {
+                    margin: 122px 0 0 0;
+
+                    @include breakpoint ("sm-max") {
+                        margin: 30px 0 0 0;
+                    }
+
+                    p {
+                        max-width: 330px;
+                        text-align: left;
+                        color: var(--colorwhite);
+                        font-family: var(--font-family2);
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            .grid-item-two {
+                max-width: 450px;
+                text-align: left;
+
+                p {
+                    max-width: 330px;
+                    text-align: left;
+                    color: var(--colorwhite);
+                    font-family: var(--font-family2);
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+
+                a {
+                    margin: 66px 0 0 0;
+                    text-decoration-line: none;
+                    font-family: var(--font-family2);
+                    color: var(--colorwhite);
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 22.25px;
+                    text-align: left;
+                    position: relative;
+                    display: block;
+
+                    &::after {
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        width: 58px;
+                        height: 4px;
+                        background-color: var(--color1);
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+}
