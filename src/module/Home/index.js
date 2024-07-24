@@ -1,4 +1,3 @@
-// src/pages/home/Home.js
 import React, { useContext } from 'react';
 import ProgressBar from '../../components/Proggressbar';
 import Header from '../../common/header';
