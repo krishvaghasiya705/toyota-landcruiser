@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./performance.scss";
 import Typewriter from 'typewriter-effect';
 import Performancebackground from "../../../assets/images/performancebackground.png";
@@ -7,6 +7,19 @@ import Carview2 from "../../../assets/images/carview2.png";
 import Carview3 from "../../../assets/images/carview3.png";
 
 function Performance() {
+    const [loading, setLoading] = useState({
+        carview1: true,
+        carview2: true,
+        carview3: true,
+    });
+
+    const handleImageLoad = (imageName) => {
+        setLoading((prevLoading) => ({
+            ...prevLoading,
+            [imageName]: false,
+        }));
+    };
+
     return (
         <div>
             <div className="Performance-div-main">
@@ -42,17 +55,35 @@ function Performance() {
 
                         <div className="Performance-car-all-view">
                             <div className="car-view">
-                                <img src={Carview1} alt="Carview1" />
+                                {loading.carview1 && <div className="skeleton-loader"></div>}
+                                <img
+                                    src={Carview1}
+                                    alt="Carview1"
+                                    onLoad={() => handleImageLoad('carview1')}
+                                    style={{ display: loading.carview1 ? 'none' : 'block' }}
+                                />
                                 <div className="Blank"></div>
                             </div>
 
                             <div className="car-view">
-                                <img src={Carview2} alt="Carview2" />
+                                {loading.carview2 && <div className="skeleton-loader"></div>}
+                                <img
+                                    src={Carview2}
+                                    alt="Carview2"
+                                    onLoad={() => handleImageLoad('carview2')}
+                                    style={{ display: loading.carview2 ? 'none' : 'block' }}
+                                />
                                 <div className="Blank"></div>
                             </div>
 
                             <div className="car-view">
-                                <img src={Carview3} alt="Carview3" />
+                                {loading.carview3 && <div className="skeleton-loader"></div>}
+                                <img
+                                    src={Carview3}
+                                    alt="Carview3"
+                                    onLoad={() => handleImageLoad('carview3')}
+                                    style={{ display: loading.carview3 ? 'none' : 'block' }}
+                                />
                                 <div className="Blank"></div>
                             </div>
                         </div>
@@ -60,7 +91,7 @@ function Performance() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Performance;

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.scss";
 import ContactBackground from "../../../assets/images/conatctbannerbackground.png";
+import SkeletonLoader from "../../../components/SkeletonLoader";
 
 import instagramicon from "../../../assets/svg/instagram.svg";
 import facebookicon from "../../../assets/svg/facebook.svg";
@@ -8,10 +9,22 @@ import twittericon from "../../../assets/svg/twitter.svg";
 import youtubeicon from "../../../assets/svg/youtube.svg";
 
 function Contact() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    const handleImageLoad = () => {
+        setIsLoading(false);
+    };
+
     return (
         <div className="contact-main">
             <div className="contact-background-main">
-                <img src={ContactBackground} alt="Contact Background" />
+                {isLoading && <SkeletonLoader />}
+                <img
+                    src={ContactBackground}
+                    alt="Contact Background"
+                    onLoad={handleImageLoad}
+                    style={{ display: isLoading ? 'none' : 'block' }}
+                />
                 <div className="Blank"></div>
             </div>
             <div className="contact-content-main">

@@ -29,10 +29,16 @@ html {
     .safty-image-div-main {
         width: 100%;
         height: 100%;
+        position: relative;
 
         img {
             display: block;
             width: 100%;
+        }
+
+        .skeleton-loader {
+            width: 100%;
+            height: 400px; // Adjust the height based on your design
         }
     }
 

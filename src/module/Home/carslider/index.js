@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./carslider.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,12 +16,14 @@ import car8 from "../../../assets/images/car8.png";
 import car9 from "../../../assets/images/car9.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function SampleNextArrow(props) {
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
-            <img src={Nextimage} alt="Nextimage" />
+            <img src={Nextimage} alt="Next" />
         </div>
     );
 }
@@ -30,18 +32,27 @@ function SamplePrevArrow(props) {
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
-            <img src={Previmage} alt="Previmage" />
+            <img src={Previmage} alt="Prev" />
         </div>
     );
 }
 
 function Carslider() {
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         AOS.init({
             duration: 1200,
             once: false,
         });
+
+        // Simulate loading
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000); // Adjust the timeout as needed
     }, []);
+
+    const images = [car1, car2, car3, car4, car5, car6, car7, car8, car9];
 
     var settings = {
         dots: false,
@@ -92,33 +103,15 @@ function Carslider() {
                 </div>
                 <div className="slider-container">
                     <Slider {...settings}>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car1} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car2} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car3} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car4} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car5} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car6} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car7} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car8} alt="car" />
-                        </div>
-                        <div className="car-box" data-aos="flip-left">
-                            <img src={car9} alt="car" />
-                        </div>
+                        {images.map((image, index) => (
+                            <div key={index} className="car-box" data-aos="flip-left">
+                                {loading ? (
+                                    <Skeleton width={200} height={150} />
+                                ) : (
+                                    <img src={image} alt={`car${index + 1}`} />
+                                )}
+                            </div>
+                        ))}
                     </Slider>
                 </div>
             </div>

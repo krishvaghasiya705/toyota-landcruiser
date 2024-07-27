@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { CursorContext } from '../../../components/CursorProvider';
 import Slider from 'react-slick';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallaryslider.scss";
@@ -38,6 +40,8 @@ function SamplePrevArrow(props) {
 
 const GallerySlider = () => {
     const { setColor } = useContext(CursorContext);
+    const [activeTab, setActiveTab] = useState('exterior');
+    const [loadedImages, setLoadedImages] = useState({});
 
     const handleMouseEnter = () => {
         setColor('highlightColor');
@@ -47,7 +51,9 @@ const GallerySlider = () => {
         setColor('defaultColor');
     };
 
-    const [activeTab, setActiveTab] = useState('exterior');
+    const handleImageLoad = (index) => {
+        setLoadedImages((prev) => ({ ...prev, [index]: true }));
+    };
 
     const settings = {
         dots: false,
@@ -87,6 +93,22 @@ const GallerySlider = () => {
         Interior4,
     ];
 
+    const renderImages = (images) => {
+        return images.map((image, index) => (
+            <div key={index} className="slick-slide-custom">
+                {!loadedImages[index] && <Skeleton height={500} />}
+                <img
+                    src={image}
+                    alt={`Slide ${index}`}
+                    style={{ display: loadedImages[index] ? 'block' : 'none' }}
+                    onLoad={() => handleImageLoad(index)}
+                    onMouseEnter={handleMouseLeave}
+                    onMouseLeave={handleMouseEnter}
+                />
+            </div>
+        ));
+    };
+
     return (
         <div className="gallary-main" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className="Gallary-title-main" onMouseEnter={handleMouseEnter}>
@@ -124,16 +146,7 @@ const GallerySlider = () => {
             {activeTab === 'exterior' && (
                 <div className="gallery-slider" onMouseEnter={handleMouseEnter}>
                     <Slider {...settings}>
-                        {exteriorImages.map((image, index) => (
-                            <div key={index} className="slick-slide-custom">
-                                <img
-                                    src={image}
-                                    alt={`Exterior Slide ${index}`}
-                                    onMouseEnter={handleMouseLeave}
-                                    onMouseLeave={handleMouseEnter}
-                                />
-                            </div>
-                        ))}
+                        {renderImages(exteriorImages)}
                     </Slider>
                 </div>
             )}
@@ -141,20 +154,10 @@ const GallerySlider = () => {
             {activeTab === 'interior' && (
                 <div className="gallery-slider" onMouseEnter={handleMouseEnter}>
                     <Slider {...settings}>
-                        {interiorImages.map((image, index) => (
-                            <div key={index} className="slick-slide-custom">
-                                <img
-                                    src={image}
-                                    alt={`Interior Slide ${index}`}
-                                    onMouseEnter={handleMouseLeave}
-                                    onMouseLeave={handleMouseEnter}
-                                />
-                            </div>
-                        ))}
+                        {renderImages(interiorImages)}
                     </Slider>
                 </div>
             )}
-
         </div>
     );
 };

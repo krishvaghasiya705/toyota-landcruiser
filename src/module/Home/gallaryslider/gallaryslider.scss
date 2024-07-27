@@ -16,7 +16,6 @@ p {
     padding: 0;
 }
 
-
 .gallary-main {
     overflow: hidden;
     height: 666.91px;
@@ -104,10 +103,10 @@ p {
         animation-delay: 2s;
 
         .slick-slide-custom {
-            transition: transform 1s ease; // Slow transition for slides
+            transition: transform 1s ease;
             padding: 0 10px;
             box-sizing: border-box;
-            position: relative; // Ensure the shake effect works correctly
+            position: relative;
 
             &:focus-within {
                 outline: none;
@@ -117,10 +116,17 @@ p {
         .slick-slide img {
             width: 100%;
             height: auto;
-            transition: transform 1s ease; // Slow transition for image zoom
+            transition: transform 1s ease;
         }
 
-        // Shaking animation
+        .slick-slide-custom {
+            .react-loading-skeleton {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+
         .shake {
             animation: shake 0.5s ease-in-out;
         }

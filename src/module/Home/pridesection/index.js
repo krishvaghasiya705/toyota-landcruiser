@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import "./pridesection.scss";
 import Pridesectionimagemain from "../../../assets/images/prideimage.png";
 import PRidelineimage from "../../../assets/illustators/landcruiseline.png";
@@ -8,6 +10,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function Pridesection() {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
     useEffect(() => {
         AOS.init({
             duration: 1200,
@@ -19,7 +23,13 @@ function Pridesection() {
         <div>
             <div className="Pridesection">
                 <div className="Pridesectionimagemain">
-                    <img src={Pridesectionimagemain} alt="Pridesectionimagemain" />
+                    {!imageLoaded && <Skeleton height="100%" />}
+                    <img
+                        src={Pridesectionimagemain}
+                        alt="Pridesectionimagemain"
+                        onLoad={() => setImageLoaded(true)}
+                        style={{ display: imageLoaded ? 'block' : 'none' }}
+                    />
                 </div>
                 <div className="Pridesectionmain">
                     <div className="container">

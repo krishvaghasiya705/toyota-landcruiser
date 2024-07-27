@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./exterior.scss";
 import Typewriter from 'typewriter-effect';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import Exteriorbackground from "../../../assets/images/exteriorbackground.png";
 import Exteriorline from "../../../assets/illustators/exteriorline.png";
 import { Link } from "react-scroll";
 
 function Exterior() {
+    const [bgImageLoaded, setBgImageLoaded] = useState(false);
+    const [lineImageLoaded, setLineImageLoaded] = useState(false);
+
     useEffect(() => {
         AOS.init({
             duration: 1200,
@@ -19,7 +24,13 @@ function Exterior() {
         <div>
             <div className="exterior-main">
                 <div className="exterior-backgorund-image-main">
-                    <img src={Exteriorbackground} alt="Exteriorbackground" />
+                    {!bgImageLoaded && <Skeleton height="100%" />}
+                    <img
+                        src={Exteriorbackground}
+                        alt="Exteriorbackground"
+                        style={{ display: bgImageLoaded ? 'block' : 'none' }}
+                        onLoad={() => setBgImageLoaded(true)}
+                    />
                 </div>
                 <div className="Exterior-ab-main">
                     <div className="container">
@@ -27,7 +38,13 @@ function Exterior() {
                             <div>
                                 <div className="Exterior-titlem-main" data-aos="zoom-in">
                                     <div className="Exterior-line">
-                                        <img src={Exteriorline} alt="Exteriorline" />
+                                        {!lineImageLoaded && <Skeleton height={10} />}
+                                        <img
+                                            src={Exteriorline}
+                                            alt="Exteriorline"
+                                            style={{ display: lineImageLoaded ? 'block' : 'none' }}
+                                            onLoad={() => setLineImageLoaded(true)}
+                                        />
                                     </div>
                                     <h1>
                                         <Typewriter
@@ -55,7 +72,7 @@ function Exterior() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Exterior;

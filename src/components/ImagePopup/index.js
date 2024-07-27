@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import './imagepopup.scss';
 import Closeicon from "../../assets/icons/closeicon.svg";
+import SkeletonLoader from '../SkeletonLoader';
 
 const ImagePopup = ({ image, onClose }) => {
     const [closing, setClosing] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const handleClose = useCallback(() => {
         setClosing(true);
@@ -41,7 +43,13 @@ const ImagePopup = ({ image, onClose }) => {
                 <button className="close-button" onClick={handleClose}>
                     <img src={Closeicon} alt="Closeicon" />
                 </button>
-                <img src={image} alt="Popup" />
+                {loading && <SkeletonLoader />}
+                <img
+                    src={image}
+                    alt="Popup"
+                    onLoad={() => setLoading(false)}
+                    style={{ display: loading ? 'none' : 'block' }}
+                />
             </div>
         </div>
     );

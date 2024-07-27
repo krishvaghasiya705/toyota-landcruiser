@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Safetysection.scss";
 import Typewriter from 'typewriter-effect';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import Saftyimage from "../../../assets/images/toyotasaftybackground.png";
 import Exteriorline from "../../../assets/illustators/exteriorline.png";
 import { Link } from 'react-router-dom';
@@ -8,6 +10,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function Safetysection() {
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+
     useEffect(() => {
         AOS.init({
             duration: 1200,
@@ -15,11 +19,21 @@ function Safetysection() {
         });
     }, []);
 
+    const handleImageLoad = () => {
+        setIsImageLoaded(true);
+    };
+
     return (
         <div>
             <div className="Safetysection">
                 <div className="safty-image-div-main">
-                    <img src={Saftyimage} alt="Saftyimage" />
+                    {!isImageLoaded && <Skeleton className="skeleton-loader" height={400} />}
+                    <img 
+                        src={Saftyimage} 
+                        alt="Saftyimage" 
+                        style={{ display: isImageLoaded ? 'block' : 'none' }} 
+                        onLoad={handleImageLoad} 
+                    />
                 </div>
                 <div className="saty-absolute-main">
                     <div className="container">

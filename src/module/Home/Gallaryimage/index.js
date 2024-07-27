@@ -5,9 +5,11 @@ import Gallaryimage2 from "../../../assets/images/Gallaryimage2.png";
 import Gallaryimage3 from "../../../assets/images/Gallaryimage3.png";
 import Gallaryimage4 from "../../../assets/images/Gallaryimage4.png";
 import ImagePopup from '../../../components/ImagePopup';
+import SkeletonLoader from '../../../components/SkeletonLoader'; // Import the SkeletonLoader component
 
 function Gallaryimage() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const images = [
     { src: Gallaryimage1, alt: 'Gallaryimage1' },
@@ -27,16 +29,24 @@ function Gallaryimage() {
     setSelectedImage(null);
   };
 
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
+
   return (
     <div>
       <div className="Gallaryimage">
         {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            onClick={(event) => handleImageClick(event, image.src)}
-          />
+          <div key={index} className="image-container">
+            {loading && <SkeletonLoader />}
+            <img
+              src={image.src}
+              alt={image.alt}
+              onClick={(event) => handleImageClick(event, image.src)}
+              onLoad={handleImageLoad}
+              onError={() => setLoading(false)}
+            />
+          </div>
         ))}
       </div>
 
