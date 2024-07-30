@@ -14,8 +14,6 @@ import car6 from "../../../assets/images/car6.png";
 import car7 from "../../../assets/images/car7.png";
 import car8 from "../../../assets/images/car8.png";
 import car9 from "../../../assets/images/car9.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -41,15 +39,9 @@ function Carslider() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        AOS.init({
-            duration: 1200,
-            once: false,
-        });
-
-        // Simulate loading
         setTimeout(() => {
             setLoading(false);
-        }, 2000); // Adjust the timeout as needed
+        }, 2000);
     }, []);
 
     const images = [car1, car2, car3, car4, car5, car6, car7, car8, car9];

@@ -3,8 +3,6 @@ import './herobanner.scss';
 import herobanner from '../../../assets/images/herobanner.png';
 import Typewriter from 'typewriter-effect';
 import herobannerline from '../../../assets/illustators/herobannerline.png';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -13,11 +11,6 @@ function Herobanner() {
     const topRef = useRef(null);
 
     useEffect(() => {
-        AOS.init({
-            duration: 1200,
-            once: false,
-        });
-
         topRef.current.scrollIntoView({ behavior: 'smooth' });
     }, []);
 

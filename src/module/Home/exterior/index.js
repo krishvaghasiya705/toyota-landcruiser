@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./exterior.scss";
 import Typewriter from 'typewriter-effect';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Exteriorbackground from "../../../assets/images/exteriorbackground.png";
@@ -12,13 +10,6 @@ import { Link } from "react-scroll";
 function Exterior() {
     const [bgImageLoaded, setBgImageLoaded] = useState(false);
     const [lineImageLoaded, setLineImageLoaded] = useState(false);
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1200,
-            once: false,
-        });
-    }, []);
 
     return (
         <div>

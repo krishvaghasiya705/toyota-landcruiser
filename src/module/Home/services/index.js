@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./services.scss";
 import Typewriter from 'typewriter-effect';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Serviceline from "../../../assets/illustators/servicesline.png";
 import Quickicon from "../../../assets/svg/quick.svg";
 import Qualified from "../../../assets/svg/qualified.svg";
@@ -33,12 +31,6 @@ const serviceData = [
 ];
 
 function Services() {
-    useEffect(() => {
-        AOS.init({
-            duration: 1200,
-            once: false,
-        });
-    }, []);
 
     return (
         <div className="Services-main">

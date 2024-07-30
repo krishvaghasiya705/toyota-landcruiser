@@ -146,7 +146,6 @@ p {
                         padding: 5px 20px;
                         font-size: 26px;
                         font-weight: 500;
-                        margin: 0 0 20px 0;
 
                         &:focus {
                             outline: none;
@@ -156,6 +155,19 @@ p {
                             color: var(--color3);
                             font-size: 26px;
                             font-weight: 500;
+                        }
+                    }
+
+                    .span {
+                        height: 20px;
+                        color: var(--colorwhite);
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: normal;
+                        font-family: var(--font-family2);
+
+                        span {
+                            margin: 0 0 5px 0;
                         }
                     }
 
@@ -172,7 +184,6 @@ p {
                         font-weight: 500;
                         resize: none;
                         height: 124px;
-                        margin: 0 0 20px 0;
 
                         &:focus {
                             outline: none;

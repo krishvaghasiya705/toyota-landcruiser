@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -6,18 +6,10 @@ import "./pridesection.scss";
 import Pridesectionimagemain from "../../../assets/images/prideimage.png";
 import PRidelineimage from "../../../assets/illustators/landcruiseline.png";
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 function Pridesection() {
-    const [imageLoaded, setImageLoaded] = useState(false);
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1200,
-            once: false,
-        });
-    }, []);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     return (
         <div>

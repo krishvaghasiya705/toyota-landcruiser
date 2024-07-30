@@ -31,4 +31,144 @@ footer {
             display: block;
         }
     }
+
+    .footer-main {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
+
+        .footer-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+
+            .footer-details-top-line {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 20px;
+                border-bottom: 1px solid #5a5757;
+                padding: 0 0 20px 0;
+                margin: 0 0 17px 0;
+
+                a {
+                    font-family: var(--font-family2);
+                    cursor: pointer;
+                    padding: 0 15px 0 0;
+                    border-right: 1px solid #908c8c;
+                    text-decoration-line: none;
+                    color: #DDD;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    transform: translateY(0);
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        transition: .3s ease-in-out;
+                        opacity: .8;
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+
+            .Footer-content-flx-main {
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                gap: 20px;
+                margin: 0 0 50px 0;
+
+                .footer-content-one {
+                    text-align: left;
+
+                    h2 {
+                        margin: 0 0 15px 0;
+                        font-family: var(--font-family2);
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 20.75px;
+                        text-align: left;
+                        color: var(--colorwhite);
+                    }
+
+                    p {
+                        margin: 0 0 5px 0;
+                        font-family: var(--font-family2);
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: 17.78px;
+                        text-align: left;
+                        color: var(--color4);
+                    }
+
+                    .toyota-social-media-icons {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 11px;
+
+                        img {
+                            cursor: pointer;
+                            --user-drag: none;
+                            user-select: none;
+                            -moz-user-select: none;
+                            -webkit-user-drag: none;
+                            -webkit-user-select: none;
+                            -ms-user-select: none;
+                        }
+                    }
+
+                    .footer-toyota-logos-main {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        align-items: center;
+                        gap: 10px;
+
+                        img {
+                            cursor: pointer;
+                            --user-drag: none;
+                            user-select: none;
+                            -moz-user-select: none;
+                            -webkit-user-drag: none;
+                            -webkit-user-select: none;
+                            -ms-user-select: none;
+                        }
+                    }
+                }
+            }
+
+            .Footer-copyright-div-main {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
+                img {
+                    cursor: pointer;
+                    --user-drag: none;
+                    user-select: none;
+                    -moz-user-select: none;
+                    -webkit-user-drag: none;
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    margin: 0 0 17px 0;
+                }
+
+                p {
+                    text-align: left;
+                    width: 100%;
+                    font-family: var(--font-family1);
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 15.73px;
+                    text-align: left;
+                    color: var(--color4);
+                }
+            }
+        }
+    }
 }

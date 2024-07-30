@@ -5,7 +5,7 @@ import Gallaryimage2 from "../../../assets/images/Gallaryimage2.png";
 import Gallaryimage3 from "../../../assets/images/Gallaryimage3.png";
 import Gallaryimage4 from "../../../assets/images/Gallaryimage4.png";
 import ImagePopup from '../../../components/ImagePopup';
-import SkeletonLoader from '../../../components/SkeletonLoader'; // Import the SkeletonLoader component
+import SkeletonLoader from '../../../components/SkeletonLoader';
 
 function Gallaryimage() {
   const [selectedImage, setSelectedImage] = useState(null);

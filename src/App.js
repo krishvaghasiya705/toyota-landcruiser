@@ -9,15 +9,33 @@ import CustomCursor from './components/cursor';
 
 function App() {
   useEffect(() => {
-    Aos.init({
-      duration: 1000, // Animation duration
-      once: false,    // Animations should happen multiple times
-    });
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 600) {
+        Aos.init({
+          offset: 200,
+          duration: 1000
+        });
+      } else if (width > 600 && width <= 900) {
+        Aos.init({
+          offset: 300,
+          duration: 1200
+        });
+      } else {
+        Aos.init();
+      }
+      Aos.refresh(); // Refresh AOS animations
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      Aos.refresh(); // Ensure animations refresh on component unmount
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   return (
     <CursorProvider>

@@ -15,6 +15,32 @@ function Contact() {
         setIsLoading(false);
     };
 
+
+    const [result, setResult] = React.useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "4d518933-75b3-465e-885c-6b700383bb39");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            console.log("Error", data);
+            setResult(data.message);
+        }
+    };
+
     return (
         <div className="contact-main">
             <div className="contact-background-main">
@@ -47,10 +73,19 @@ function Contact() {
 
                         <div className="grid-items-two">
                             <h2>FOLLOW TOYOTA</h2>
-                            <form>
-                                <input type="text" placeholder="Enter your Name" required />
-                                <input type="text" placeholder="Enter a valid email address" required />
-                                <textarea placeholder="Enter your message" required></textarea>
+                            <form onSubmit={onSubmit}>
+                                <input type="text" name="name" placeholder="Enter your Name" required />
+                                <div className="span">
+                                    <span>{result}</span>
+                                </div>
+                                <input type="email" name="email" placeholder="Enter a valid email address" required />
+                                <div className="span">
+                                    <span>{result}</span>
+                                </div>
+                                <textarea name="message" placeholder="Enter your message" required></textarea>
+                                <div className="span">
+                                    <span>{result}</span>
+                                </div>
                                 <button type="submit">submit</button>
                             </form>
                         </div>
