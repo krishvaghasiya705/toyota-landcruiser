@@ -87,6 +87,7 @@ footer {
                     text-align: left;
 
                     h2 {
+                        cursor: pointer;
                         margin: 0 0 15px 0;
                         font-family: var(--font-family2);
                         font-size: 14px;
@@ -94,9 +95,16 @@ footer {
                         line-height: 20.75px;
                         text-align: left;
                         color: var(--colorwhite);
+                        transition: all .3s ease-in-out;
+
+                        &:hover {
+                            transition: all .3s ease-in-out;
+                            color: var(--color4);
+                        }
                     }
 
                     p {
+                        cursor: pointer;
                         margin: 0 0 5px 0;
                         font-family: var(--font-family2);
                         font-size: 12px;
@@ -104,6 +112,12 @@ footer {
                         line-height: 17.78px;
                         text-align: left;
                         color: var(--color4);
+                        transition: all .3s ease-in-out;
+
+                        &:hover {
+                            transition: all .3s ease-in-out;
+                            color: var(--colorwhite);
+                        }
                     }
 
                     .toyota-social-media-icons {
