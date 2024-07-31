@@ -213,8 +213,8 @@ header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        gap: 0;
-                        color: var(--colorwhiyte);
+                        gap: 4px;
+                        color: var(--colorblack);
                         font-weight: 900;
                         font-family: var(--font-family1);
                         text-transform: uppercase;
@@ -229,14 +229,14 @@ header {
                             &::after {
                                 left: 0;
                                 opacity: 1;
-                                width: 80%;
+                                width: 100%;
                                 right: 0;
                                 margin: 0 auto;
                             }
                         }
 
                         .dropdown-icon {
-                            width: 15px;
+                            width: 13px;
                             height: auto;
                         }
 
@@ -249,7 +249,7 @@ header {
                             opacity: 0;
                             width: 0;
                             left: 50%;
-                            -webkit-transition: all .3s cubic-bezier(.455, .03, .515, .955);
+                            --webkit-transition: all .3s cubic-bezier(.455, .03, .515, .955);
                         }
 
                     }
@@ -307,14 +307,17 @@ header {
                 text-decoration: none;
                 position: relative;
                 height: 30px;
+                transition: all .3s ease-in-out;
 
                 &:hover {
+                    transition: all .3s ease-in-out;
                     color: #d00;
 
                     &::after {
+                        transition: all .3s ease-in-out;
                         left: 0;
                         opacity: 1;
-                        width: 80%;
+                        width: 100%;
                         right: 0;
                         margin: 0 auto;
                     }
@@ -334,7 +337,7 @@ header {
                     opacity: 0;
                     width: 0;
                     left: 50%;
-                    -webkit-transition: all .3s cubic-bezier(.455, .03, .515, .955);
+                    --webkit-transition: all .3s cubic-bezier(.455, .03, .515, .955);
                 }
 
             }
@@ -422,10 +425,10 @@ header {
         position: relative;
 
         .mobile-header-background-main {
-            display: block;
+            display: none;
 
             img {
-                height: 134px;
+                height: 80px;
                 width: 100%;
             }
         }
@@ -435,6 +438,7 @@ header {
             top: 0;
             left: 0;
             width: 100%;
+            background-color: #000;
 
             .header-mobile-contant {
                 display: flex;
@@ -486,6 +490,7 @@ header {
                 }
 
                 .menu {
+                    z-index: 99;
                     position: absolute;
                     top: 58px;
                     left: 0;
@@ -521,7 +526,7 @@ header {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
-                                gap: 0;
+                                gap: 1px;
                                 color: var(--colorwhiyte);
                                 font-weight: 900;
                                 font-family: var(--font-family1);
@@ -537,7 +542,7 @@ header {
                                     &::after {
                                         left: 0;
                                         opacity: 1;
-                                        width: 80%;
+                                        width: 100%;
                                         right: 0;
                                         margin: 0 auto;
                                     }
@@ -557,7 +562,7 @@ header {
                                     opacity: 0;
                                     width: 0;
                                     left: 50%;
-                                    -webkit-transition: all .3s cubic-bezier(.455, .03, .515, .955);
+                                    --webkit-transition: all .3s cubic-bezier(.455, .03, .515, .955);
                                 }
 
                             }

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import './header.scss';
 import Toyotalogomain from "../../assets/icons/toyotalogomain.svg";
 import DropdownIcon from "../../assets/icons/dropdownicon.png";
+import DropdownIconsc from "../../assets/icons/dropdowniconsc.png";
 import mapicon from "../../assets/icons/map.png";
 import mobioleicon from "../../assets/icons/mobile.png";
 import haderbackground from "../../assets/headerimage/haderbackground.png";
@@ -138,7 +139,7 @@ const Header = () => {
                           className={dropdown[key] ? 'active' : ''}
                         >
                           {label}
-                          <img src={DropdownIcon} alt="Dropdown Icon" className="dropdown-icon" />
+                          <img src={DropdownIconsc} alt="Dropdown Icon" className="dropdown-icon" />
                         </span>
                         {dropdown[key] && (
                           <div ref={dropdownRef} className="dropdown">
@@ -188,7 +189,7 @@ const Header = () => {
                           className={dropdown[key] ? 'active' : ''}
                         >
                           {label}
-                          <img src={DropdownIcon} alt="Dropdown Icon" className="dropdown-icon" />
+                          <img src={DropdownIconsc} alt="Dropdown Icon" className="dropdown-icon" />
                         </span>
                         {dropdown[key] && (
                           <div ref={dropdownRef} className="dropdown">

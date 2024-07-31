@@ -22,9 +22,9 @@ const ImagePopup = ({ image, onClose }) => {
             }
         };
 
-        document.body.style.overflow = image ? 'hidden' : 'auto';
-
         window.addEventListener('keydown', handleKeyDown);
+
+        document.body.style.overflow = image ? 'hidden' : 'auto';
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);

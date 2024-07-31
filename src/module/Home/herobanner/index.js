@@ -19,52 +19,50 @@ function Herobanner() {
     };
 
     return (
-        <div>
-            <div className="herobanner" ref={topRef}>
-                <div className="herobanner-image-main">
-                    {!imageLoaded && <Skeleton height="100%" />}
-                    <img
-                        src={herobanner}
-                        alt="herobanner"
-                        onLoad={handleImageLoad}
-                        style={{ display: imageLoaded ? 'block' : 'none' }}
-                    />
-                    <div className="herobanner-image-background"></div>
-                </div>
-                <div className="herobanner-main" data-aos="fade-left">
-                    <div className="container">
-                        <div className="herobanner-contant-main">
-                            <div>
-                                <div className="the-div-main">
-                                    <div className="herobannerline" data-aos="fade-left">
-                                        <img src={herobannerline} alt="herobannerline" />
-                                    </div>
-                                    <Typewriter
-                                        options={{
-                                            strings: ['THE'],
-                                            autoStart: true,
-                                            loop: true,
-                                        }}
-                                    />
+        <div className="herobanner" ref={topRef}>
+            <div className="herobanner-image-main">
+                {!imageLoaded && <Skeleton height="100%" />}
+                <img
+                    src={herobanner}
+                    alt="herobanner"
+                    onLoad={handleImageLoad}
+                    style={{ display: imageLoaded ? 'block' : 'none' }}
+                />
+                <div className="herobanner-image-background"></div>
+            </div>
+            <div className="herobanner-main" data-aos="fade-left">
+                <div className="container">
+                    <div className="herobanner-contant-main">
+                        <div>
+                            <div className="the-div-main">
+                                <div className="herobannerline" data-aos="fade-left">
+                                    <img src={herobannerline} alt="herobannerline" />
                                 </div>
-                                <div className="conqueror-div" data-aos="fade-left">
-                                    <Typewriter
-                                        options={{
-                                            strings: ['CONQUEROR'],
-                                            autoStart: true,
-                                            loop: true,
-                                        }}
-                                    />
-                                </div>
-                                <div className="oftheworld-div" data-aos="fade-left">
-                                    <Typewriter
-                                        options={{
-                                            strings: ['OF THE WORLD'],
-                                            autoStart: true,
-                                            loop: true,
-                                        }}
-                                    />
-                                </div>
+                                <Typewriter
+                                    options={{
+                                        strings: ['THE'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </div>
+                            <div className="conqueror-div" data-aos="fade-left">
+                                <Typewriter
+                                    options={{
+                                        strings: ['CONQUEROR'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </div>
+                            <div className="oftheworld-div" data-aos="fade-left">
+                                <Typewriter
+                                    options={{
+                                        strings: ['OF THE WORLD'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>

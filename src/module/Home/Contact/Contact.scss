@@ -135,6 +135,10 @@ p {
                 form {
                     width: 100%;
 
+                    .error {
+                        color: red;
+                    }
+
                     input {
                         box-sizing: border-box;
                         width: 100%;
@@ -210,11 +214,16 @@ p {
                         font-weight: 300;
                         line-height: 11px;
                         text-align: left;
+                        outline: none;
 
                         &:hover {
                             background-color: transparent;
                             color: var(--colorwhite);
                             border: 1px solid var(--color1);
+                        }
+
+                        &:focus-visible {
+                            outline: none;
                         }
                     }
                 }

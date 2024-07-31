@@ -8,6 +8,42 @@ import { CursorProvider } from './components/CursorProvider';
 import CustomCursor from './components/cursor';
 
 function App() {
+
+
+
+
+
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('keydown', event => {
+    if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+      event.preventDefault();
+    }
+  });
+  document.addEventListener('keydown', event => {
+    if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+      event.preventDefault();
+      console.log('Blocked Ctrl + Shift + C');
+    }
+  });
+  document.addEventListener('keydown', event => {
+    if (event.ctrlKey && event.shiftKey && event.key === 'M') {
+      event.preventDefault();
+      console.log('Blocked Ctrl + Shift + C');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;

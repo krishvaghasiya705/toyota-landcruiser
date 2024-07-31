@@ -16,7 +16,6 @@ p {
     padding: 0;
 }
 
-
 .Pridesection {
     overflow: hidden;
     margin: 0;
@@ -197,7 +196,7 @@ p {
                 }
 
                 a {
-                    margin: 66px 0 0 0;
+                    margin: 66px 0 10px 0;
                     text-decoration-line: none;
                     font-family: var(--font-family2);
                     color: var(--colorwhite);
@@ -217,6 +216,18 @@ p {
                         background-color: var(--color1);
                         content: "";
                     }
+                }
+
+                .expanded {
+                    transition: all .5s ease-in-out;
+                    height: 85px;
+                    overflow: hidden;
+                }
+
+                .collapsed {
+                    transition: all .5s ease-in-out;
+                    height: 0px;
+                    overflow: hidden;
                 }
             }
         }
